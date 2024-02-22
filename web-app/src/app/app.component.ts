@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
-import { ChangeDetectorRef, Component, inject } from '@angular/core';
+import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
 @Component({
@@ -11,15 +11,12 @@ import { RouterModule } from '@angular/router';
   styleUrl: './app.component.scss',
 })
 export class AppComponent {
-  private http = inject(HttpClient);
-  private cd = inject(ChangeDetectorRef);
-
   orders: any[] = [];
+  year = new Date().getFullYear();
 
-  constructor() {
-    this.http.get<any>('/api/order/1').subscribe((orders) => {
+  constructor(http: HttpClient) {
+    http.get<any>('/api/order/1').subscribe((orders) => {
       this.orders = orders;
-      this.cd.detectChanges();
     });
   }
 }
