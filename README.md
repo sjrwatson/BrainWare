@@ -27,14 +27,14 @@ Change the AttachDbFile name to the full path of the BrainWare.mdf file (located
 - Start SQL Server Management Studio as Administrator
 - Once connected to your local SQL Server instance
 - Right click on the Database node and select Attach
-- Select the file BrainWare\Web\App_Data\BrainWare.mdf
+- Select the file BrainWare\Api\Data\BrainWare.mdf
 
 - You can also deploy the project ProjectDB to your local SQL Server instance
 - Then execute in SQL Server Management Studio the file BrainWare\ProjectDB\PopulateDB.sql
 
 ### API - Visual Studio
 - Open solution BrainWare\BrainWare.sln
-- Update the database connection string in file Web\Infrastructure\Database.cs
+- Update the database connection string in file Api\Infrastructure\Database.cs
 - Set the project Web, as the start up project
 - Press F5
 
