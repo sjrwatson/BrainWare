@@ -1,21 +1,35 @@
-﻿namespace Api.Controllers
-{
-  using Infrastructure;
-  using Microsoft.AspNetCore.Mvc;
-  using Models;
+﻿namespace Api.Controllers;
 
-  [ApiController]
-  [Route("api")]
-  public class OrderController : ControllerBase
-  {
+using Infrastructure;
+using Microsoft.AspNetCore.Mvc;
+using Models;
+
+[ApiController]
+[Route("api")]
+public class OrderController : ControllerBase
+{
+    private IOrderService _orderService;
+    public OrderController(IOrderService orderService) 
+    {
+        _orderService = orderService;
+    }
+
     [HttpGet]
     [Route("order/{id}")]
-
-    public IEnumerable<Order> GetOrders(int id = 1)
+    [ProducesResponseType(StatusCodes.Status200OK, Type=typeof(IEnumerable<Order>))]
+    [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+    public IActionResult GetOrders(int id = 1)
     {
-      var data = new OrderService();
-
-      return data.GetOrdersForCompany(id);
+          try
+          {
+            return Ok(_orderService.GetOrdersForCompany(id));
+          }
+          catch (Exception ex)
+          {
+              return StatusCode(
+                  StatusCodes.Status500InternalServerError,
+                  "An unhandled error occurred.");
+              //TODO: Log the error for us.
+          }
     }
-  }
 }

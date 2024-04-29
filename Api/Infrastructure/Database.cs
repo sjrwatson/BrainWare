@@ -10,7 +10,7 @@
         public Database()
         {
             // var connectionString = "Data Source=LOCALHOST;Initial Catalog=BrainWare;Integrated Security=SSPI";
-            var mdf = @"C:\temp\BrainWare\BrainWare\Api\data\BrainWare.mdf";
+            var mdf = @"C:\Users\doyou\Documents\BrainShark\BrainWare\Api\data\BrainWare.mdf";
             var connectionString = $"Data Source=(LocalDb)\\MSSQLLocalDB;Initial Catalog=BrainWAre;Integrated Security=SSPI;AttachDBFilename={mdf}";
 
             _connection = new SqlConnection(connectionString);
