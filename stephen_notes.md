@@ -15,10 +15,11 @@
 - Removed unused styles.
 - Added logging.
 
-Also ran Snyk scan to check for vulnerabilities, 2 found:
+##Also ran Snyk scan to check for vulnerabilities, 2 found:
 
-Low severity - Improper Restriction of Rendered UI Layers or Frames
-Med severity - Missing Release of Resource after Effective Lifetime
+:grey_exclamation: Low severity - Improper Restriction of Rendered UI Layers or Frames
+:exclamation:  Med severity - Missing Release of Resource after Effective Lifetime, introduced by angular
+:fire:  No high severity  issues
 
 No high priority security risks uncovered.
 
@@ -59,4 +60,3 @@ I also updated to the latest version of Angular as NPM flagged vulnerabilities d
 
 I did not perform any performance tuning on this app.
 If post release there where issues with performance there is an opportunity for parallelism when getting orders and order products from the DB.
-
