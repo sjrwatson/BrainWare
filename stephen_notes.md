@@ -15,7 +15,7 @@
 - Removed unused styles.
 - Added logging.
 
-##Also ran Snyk scan to check for vulnerabilities, 2 found:
+##  Also ran Snyk scan to check for vulnerabilities, 2 found:
 
 :grey_exclamation: Low severity - Improper Restriction of Rendered UI Layers or Frames<br>
 :exclamation:  Med severity - Missing Release of Resource after Effective Lifetime, introduced by angular<br>
