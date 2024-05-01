@@ -21,8 +21,6 @@
 :exclamation:  Med severity - Missing Release of Resource after Effective Lifetime, introduced by angular<br>
 :fire:  No high severity  issues<br><br>
 
-No high priority security risks uncovered.
-
 # Notes :books:
 
 ## Code structure :moyai:
