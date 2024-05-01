@@ -17,9 +17,9 @@
 
 ##Also ran Snyk scan to check for vulnerabilities, 2 found:
 
-:grey_exclamation: Low severity - Improper Restriction of Rendered UI Layers or Frames
-:exclamation:  Med severity - Missing Release of Resource after Effective Lifetime, introduced by angular
-:fire:  No high severity  issues
+:grey_exclamation: Low severity - Improper Restriction of Rendered UI Layers or Frames<br>
+:exclamation:  Med severity - Missing Release of Resource after Effective Lifetime, introduced by angular<br>
+:fire:  No high severity  issues<br><br>
 
 No high priority security risks uncovered.
 
