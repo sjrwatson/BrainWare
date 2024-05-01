@@ -52,7 +52,11 @@ I also updated to the latest version of Angular as NPM flagged vulnerabilities d
 
 ## Containerisation :gift:
 
-
+Dockerfiles for these projects can be generated using docker init the API and UI directories.<br>
+However the defaults are currently causing build issues, caused by timeouts from npm commands.<br> 
+I have not encountered these issues before and I believe the VM that I am using for development may be the culprit.<br>
+Given these issues with my local setup I have opted to forego creating containers in this instance.<br>
+Depending on how a CI/CD pipeline is this may be a requirement for a production release.<br>
 
 ## Performance :hourglass:
 
