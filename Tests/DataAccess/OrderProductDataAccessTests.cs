@@ -69,7 +69,7 @@ public class OrderProductDataAccessTests
         Assert.Equal(expectedResult[0].Product.Price, result[0].Product.Price);
     }
 
-    private IDataReader MockIDataReaderReturnsOneRow()
+    private static IDataReader MockIDataReaderReturnsOneRow()
     {
         var moq = new Mock<IDataReader>();
 

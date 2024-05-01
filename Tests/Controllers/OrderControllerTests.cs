@@ -6,6 +6,7 @@ using Api.Models;
 using Api.Services;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 using Moq;
 using Moq.AutoMock;
 using Xunit;
@@ -16,12 +17,16 @@ public class OrderControllerTests
 {
     private readonly OrderController _controllerUnderTest;
     private readonly Mock<IOrderService> _orderServiceMock;
+    private readonly Mock<ILogger<OrderController>> _loggerMock;
 
     public  OrderControllerTests()
     {
+
         var autoMock = new AutoMocker();
         _orderServiceMock = autoMock.GetMock<IOrderService>();
-        _controllerUnderTest = new OrderController(_orderServiceMock.Object);
+        _loggerMock = new Mock<ILogger<OrderController>>();
+
+        _controllerUnderTest = new OrderController(_orderServiceMock.Object, _loggerMock.Object);
     }
 
     [Fact]

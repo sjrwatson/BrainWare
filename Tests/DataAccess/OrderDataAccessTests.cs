@@ -66,7 +66,7 @@ public class OrderDataAccessTests
         Assert.Equal(expectedResult[0].OrderId, result[0].OrderId);
     }
 
-    private IDataReader MockIDataReaderReturnsOneRow()
+    private static IDataReader MockIDataReaderReturnsOneRow()
     {
         var moq = new Mock<IDataReader>();
 
