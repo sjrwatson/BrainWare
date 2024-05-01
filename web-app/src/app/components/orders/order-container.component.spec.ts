@@ -1,17 +1,17 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
-import { AppComponent } from './app.component';
+import { OrderContainerComponent } from './order-container.component';
 
-describe('AppComponent', () => {
-  let component: AppComponent;
-  let fixture: ComponentFixture<AppComponent>;
+describe('OrderContainerComponent', () => {
+  let component: OrderContainerComponent;
+  let fixture: ComponentFixture<OrderContainerComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [AppComponent, HttpClientTestingModule],
+      imports: [OrderContainerComponent, HttpClientTestingModule],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(AppComponent);
+    fixture = TestBed.createComponent(OrderContainerComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
