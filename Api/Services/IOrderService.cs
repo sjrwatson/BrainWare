@@ -1,6 +1,6 @@
 ﻿using Api.Models;
 
-namespace Api.Infrastructure
+namespace Api.Services
 {
     public interface IOrderService
     {

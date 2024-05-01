@@ -1,6 +1,6 @@
 ﻿namespace Api.Controllers;
 
-using Infrastructure;
+using Api.Services;
 using Microsoft.AspNetCore.Mvc;
 using Models;
 
@@ -8,7 +8,8 @@ using Models;
 [Route("api")]
 public class OrderController : ControllerBase
 {
-    private IOrderService _orderService;
+    private readonly IOrderService _orderService;
+
     public OrderController(IOrderService orderService) 
     {
         _orderService = orderService;

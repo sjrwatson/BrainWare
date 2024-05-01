@@ -2,8 +2,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Api.Controllers;
-using Api.Infrastructure;
 using Api.Models;
+using Api.Services;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Moq;
@@ -14,8 +14,8 @@ namespace Tests.Controllers;
 
 public class OrderControllerTests
 {
-    private OrderController _controllerUnderTest;
-    private Mock<IOrderService> _orderServiceMock;
+    private readonly OrderController _controllerUnderTest;
+    private readonly Mock<IOrderService> _orderServiceMock;
 
     public  OrderControllerTests()
     {
@@ -57,9 +57,9 @@ public class OrderControllerTests
     {
         //Arrange
         var orders = new List<Order>() {
-            new Order { CompanyName = "comp_1", Description = "order_1",  OrderId = 1, OrderProducts = null, OrderTotal = 100 },
-            new Order { CompanyName = "comp_1", Description = "order_2",  OrderId = 2, OrderProducts = null, OrderTotal = 200 },
-            new Order { CompanyName = "comp_1", Description = "order_3",  OrderId = 3, OrderProducts = null, OrderTotal = 300 },
+            new() { CompanyName = "comp_1", Description = "order_1",  OrderId = 1, OrderProducts = null, OrderTotal = 100 },
+            new() { CompanyName = "comp_1", Description = "order_2",  OrderId = 2, OrderProducts = null, OrderTotal = 200 },
+            new() { CompanyName = "comp_1", Description = "order_3",  OrderId = 3, OrderProducts = null, OrderTotal = 300 },
         };
         _orderServiceMock
             .Setup(o =>  o.GetOrdersForCompany(It.IsAny<int>()))

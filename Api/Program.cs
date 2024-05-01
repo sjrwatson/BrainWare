@@ -1,4 +1,6 @@
+using Api.DataAccess;
 using Api.Infrastructure;
+using Api.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,6 +11,9 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<IOrderService, OrderService>();
+builder.Services.AddScoped<IOrderDataAccess, OrderDataAccess>();
+builder.Services.AddScoped<IOrderProductDataAccess, OrderProductDataAccess>();
+builder.Services.AddScoped<IDatabase, Database>();
 
 var app = builder.Build();
 
