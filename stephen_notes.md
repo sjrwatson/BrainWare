@@ -60,3 +60,4 @@ I also updated to the latest version of Angular as NPM flagged vulnerabilities d
 
 I did not perform any performance tuning on this app.
 If post release there where issues with performance there is an opportunity for parallelism when getting orders and order products from the DB.
+There may also be an opportunity for performance gains by introducing cacheing if needed on the API.
