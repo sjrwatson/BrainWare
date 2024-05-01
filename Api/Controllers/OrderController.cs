@@ -9,10 +9,12 @@ using Models;
 public class OrderController : ControllerBase
 {
     private readonly IOrderService _orderService;
+    private readonly ILogger<OrderController> _logger;
 
-    public OrderController(IOrderService orderService) 
+    public OrderController(IOrderService orderService, ILogger<OrderController> logger) 
     {
         _orderService = orderService;
+        _logger = logger;
     }
 
     [HttpGet]
@@ -27,10 +29,11 @@ public class OrderController : ControllerBase
           }
           catch (Exception ex)
           {
-              return StatusCode(
+            _logger.LogError(ex.Message, ex);
+
+            return StatusCode(
                   StatusCodes.Status500InternalServerError,
                   "An unhandled error occurred.");
-              //TODO: Log the error for us.
           }
     }
 }

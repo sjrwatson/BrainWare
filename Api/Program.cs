@@ -14,6 +14,8 @@ builder.Services.AddScoped<IOrderService, OrderService>();
 builder.Services.AddScoped<IOrderDataAccess, OrderDataAccess>();
 builder.Services.AddScoped<IOrderProductDataAccess, OrderProductDataAccess>();
 builder.Services.AddScoped<IDatabase, Database>();
+builder.Services.AddLogging(builder => builder.AddConsole());
+
 
 var app = builder.Build();
 
